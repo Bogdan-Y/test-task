@@ -1,7 +1,12 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import ClientProfile from './components/ClientProfile';
+import theme from './theme';
 
-function App() {
-  return <div>Hi</div>;
-}
+const App: React.FC = () => (
+  <ThemeProvider theme={theme}>
+    <ClientProfile />
+  </ThemeProvider>
+);
 
 export default App;

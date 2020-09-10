@@ -29,6 +29,7 @@
       "extensions": [".jsx", ".tsx", ".ts"]
     }],
     "import/extensions": 0,
-    "import/no-extraneous-dependencies": 0
+    "import/no-extraneous-dependencies": 0,
+    "react/jsx-one-expression-per-line": 0
   }
 }

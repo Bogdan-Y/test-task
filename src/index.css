@@ -1,13 +1,44 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Montserrat', sans-serif;
+  /*-webkit-font-smoothing: antialiased;*/
+  /*-moz-osx-font-smoothing: grayscale;*/
+  line-height: 20px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Icon Fonts */
+@font-face {
+  font-family: 'Glyphter';
+  src: url('./assets/icon-font/Glyphter.eot');
+  src: url('./assets/icon-font/Glyphter.eot?#iefix') format('embedded-opentype'),
+  url('./assets/icon-font/Glyphter.woff') format('woff'),
+  url('./assets/icon-font/Glyphter.ttf') format('truetype'),
+  url('./assets/icon-font/Glyphter.svg#Glyphter') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class*='icon-']::before {
+  display: inline-block;
+  font-family: 'Glyphter';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
+.icon-icon_wine::before {content:'\0041';}
+.icon-icon_bodytype::before {content:'\0042';}
+.icon-icon_child::before {content:'\0043';}
+.icon-icon_haircolor::before {content:'\0044';}
+.icon-icon_height::before {content:'\0045';}
+.icon-icon_relationship::before {content:'\0046';}
+.icon-icon_religion::before {content:'\0047';}
+.icon-icon_sexuality::before {content:'\0048';}
+.icon-icon_smoke::before {content:'\0049';}
+.icon-icon_weight::before {content:'\004a';}
