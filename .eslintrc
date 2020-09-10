@@ -1,0 +1,34 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": "."
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "jest": true
+  },
+  "plugins": ["@typescript-eslint", "react-hooks"],
+  "extends": [
+    "react-app",
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:import/typescript",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect" /* Tells eslint-plugin-react to automatically detect the version of React to use */
+    }
+  },
+  "rules": {
+    "react/jsx-filename-extension": [1, {
+      "extensions": [".jsx", ".tsx", ".ts"]
+    }],
+    "import/extensions": 0,
+    "import/no-extraneous-dependencies": 0
+  }
+}
