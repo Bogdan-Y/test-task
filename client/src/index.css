@@ -13,11 +13,11 @@ code {
 /* Icon Fonts */
 @font-face {
   font-family: 'Glyphter';
-  src: url('./assets/icon-font/Glyphter.eot');
-  src: url('./assets/icon-font/Glyphter.eot?#iefix') format('embedded-opentype'),
-  url('./assets/icon-font/Glyphter.woff') format('woff'),
-  url('./assets/icon-font/Glyphter.ttf') format('truetype'),
-  url('./assets/icon-font/Glyphter.svg#Glyphter') format('svg');
+  src: url('assets/icon-font/Glyphter.eot');
+  src: url('assets/icon-font/Glyphter.eot?#iefix') format('embedded-opentype'),
+  url('assets/icon-font/Glyphter.woff') format('woff'),
+  url('assets/icon-font/Glyphter.ttf') format('truetype'),
+  url('assets/icon-font/Glyphter.svg#Glyphter') format('svg');
   font-weight: normal;
   font-style: normal;
 }

@@ -2,7 +2,10 @@
   "name": "test-task",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:9090",
   "dependencies": {
+    "grpc-web": "^1.2.1",
+    "google-protobuf": "^3.7.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-scripts": "3.4.3",
