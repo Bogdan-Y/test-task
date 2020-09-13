@@ -1,8 +1,11 @@
-const PROTO_PATH = '../protos/api.proto';
-
+const path = require('path');
 const assert = require('assert');
 const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
+const registerClientProfileProcedures = require('./procedures/client-profile');
+
+const PROTO_PATH = path.resolve(__dirname, '../../protos/api.proto');
+
 const packageDefinition = protoLoader.loadSync(
   PROTO_PATH,
   {
@@ -13,21 +16,13 @@ const packageDefinition = protoLoader.loadSync(
     oneofs: true
   });
 const protoDescriptor = grpc.loadPackageDefinition(packageDefinition);
-const clientProfile = protoDescriptor.apiService;
-const { getClientProfile } = require('./data/client-profile');
-
+const apiService = protoDescriptor.apiService;
 const server = new grpc.Server();
 
-server.addService(clientProfile.ApiService.service, {
-  GetClientProfileById: function(call,callback) {
-    const clientProfile = getClientProfile();
-
-    return callback(null, clientProfile)
-  }
-});
+registerClientProfileProcedures(server, apiService);
 
 server.bindAsync(
-'0.0.0.0:8081', grpc.ServerCredentials.createInsecure(), (err, port) => {
+'0.0.0.0:8081', grpc.ServerCredentials.createInsecure(), (err) => {
   assert.ifError(err);
     console.log("server start");
     server.start();

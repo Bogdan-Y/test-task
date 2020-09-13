@@ -1,20 +1,22 @@
-import { ClientProfileRequest, ClientProfileResponse } from '../../grpc/api_pb';
+import * as grpcWeb from 'grpc-web';
+import { ClientProfileRequest, ClientProfileResponse } from '../../proto/api_pb';
 import { apiService } from '../../ApiContext';
-import * as grpcWeb from "grpc-web";
 
-export interface IClientProfile extends ClientProfileResponse.AsObject {}
+export interface ClientProfileModel extends ClientProfileResponse.AsObject {}
 
-const getById = (id: number): Promise<IClientProfile  | Error> => {
+const getById = (id: number): Promise<ClientProfileModel> => {
   const clientProfileRequest = new ClientProfileRequest();
   clientProfileRequest.setId(id);
 
   return apiService.getClientProfileById(clientProfileRequest, {})
     .then((response: ClientProfileResponse) => response.toObject())
-    .catch((err: grpcWeb.Error) => new Error(err.message));
+    .catch((err: grpcWeb.Error) => {
+      throw new Error(err.message);
+    });
 };
 
 const clientProfileApi = {
-  getById
+  getById,
 };
 
 export default clientProfileApi;

@@ -1,18 +1,20 @@
-version: '3'
+version: '3.7'
 services:
   node-server:
+    container_name: src-server
     build:
-      context: ./
-      dockerfile: ./server/Dockerfile
-    image: grpcweb/node-server
+      context: .
+      dockerfile: server/Dockerfile
+    volumes:
+      - ./server/src:/usr/src/app/server/src
+      - ./protos:/usr/src/app/protos
+    ports:
+      - "8081:8081"
+
+  envoy:
+    build: ./envoy
+    container_name: envoy
     ports:
       - "9090:9090"
-  envoy:
-    build:
-      context: ./
-      dockerfile: ./envoy/Dockerfile
-    image: grpcweb/envoy
-    ports:
-      - "8080:8080"
     links:
       - node-server

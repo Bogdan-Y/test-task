@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useGrpcApi } from '../../ApiContext';
 import SliderPhoto from '../SliderPhoto';
 import Tag from '../Tag';
-import { IClientProfile } from '../../services/api/client-profile-api';
+import { ClientProfileModel } from '../../services/api/client-profile-api';
 import {
   ClientProfileContent,
   ClientProfileDescription,
@@ -16,12 +16,12 @@ import {
 } from './styles';
 
 const ClientProfile: React.FC = () => {
-  const [profileInfo, setProfileInfo] = useState<IClientProfile | null>(null);
+  const [profileInfo, setProfileInfo] = useState<ClientProfileModel | null>(null);
 
   const { clientProfile } = useGrpcApi();
 
   useEffect(() => {
-    clientProfile.getById(1).then((profile: IClientProfile) => {
+    clientProfile.getById(1).then((profile: ClientProfileModel) => {
       setProfileInfo(profile);
     });
   }, [clientProfile]);

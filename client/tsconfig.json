@@ -20,9 +20,9 @@
     "jsx": "react"
   },
   "files": [
-    "./src/theme/styled-components.d.ts"
+    "src/theme/styled-components.d.ts"
   ],
   "include": [
     "src"
-  ]
+  ],
 }

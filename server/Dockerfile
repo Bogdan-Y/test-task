@@ -1,13 +1,12 @@
-FROM grpcweb/prereqs
+FROM node:12.18.0
 
-ENV ROOTDIR /usr/src/app
+ENV ROOTDIR /usr/src/app/server
+
+RUN mkdir -p $ROOTDIR
 
 WORKDIR $ROOTDIR
 
-COPY frontend/package*.json $ROOTDIR/
+COPY server/package*.json ./
 RUN npm ci
 
-COPY server.js $ROOTDIR/
-
-EXPOSE 9090
-CMD ["node", "server.js"]
+CMD ["npm", "start"]

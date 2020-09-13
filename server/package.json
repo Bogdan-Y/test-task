@@ -1,6 +1,9 @@
 {
   "name": "grpc-examples",
   "version": "0.1.0",
+  "scripts": {
+    "start": "node src/server.js"
+  },
   "dependencies": {
     "@grpc/grpc-js": "~1.0.5",
     "@grpc/proto-loader": "^0.1.0",

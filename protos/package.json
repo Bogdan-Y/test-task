@@ -1,0 +1,12 @@
+{
+  "name": "grpc-examples",
+  "version": "0.1.0",
+  "scripts": {
+    "copy-to-client": "shx rm -rf ../client/src/proto && shx cp -R ./generated/ ../client/src/proto",
+    "build": "protoc api.proto --js_out=import_style=commonjs:./generated --grpc-web_out=import_style=typescript,mode=grpcwebtext:./generated",
+    "build-copy": "npm run build && npm run copy-to-client"
+  },
+  "devDependencies": {
+    "shx": "^0.3.2"
+  }
+}

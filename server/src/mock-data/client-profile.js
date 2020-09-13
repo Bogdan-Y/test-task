@@ -1,6 +1,7 @@
-exports.getClientProfile = () => {
-  return {
-    photos: '',
+const clientProfiles = [
+  {
+    id: 1,
+    photos: ['/assets/profile-slider-photo.png'],
     name: 'Margaret',
     age: '52',
     isOnline: true,
@@ -15,4 +16,8 @@ exports.getClientProfile = () => {
     location: '5 ml away',
     isVerified: true,
   }
+];
+
+exports.getClientProfileById = (id) => {
+  return clientProfiles.find((clientProfile) => clientProfile.id === id);
 };
