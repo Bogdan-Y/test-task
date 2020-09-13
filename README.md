@@ -6,6 +6,11 @@
 
 ### Install gRPC-Web protoc plugin
 
+This approach work only on Linux and Mac OS for other details see:  
+https://grpc.io/docs/languages/web/basics/  
+https://github.com/grpc/grpc-web  
+https://github.com/grpc/grpc-web/releases
+
 To generate the gRPC-Web service client stub, 
 first you need the gRPC-Web protoc plugin. To compile the plugin 
 protoc-gen-grpc-web, you need to run this from the repo’s root directory:
@@ -28,7 +33,6 @@ npm run install-dependency
 
 #### 2. Launch envoy and node service:
 ```sh
-docker-compose pull
 docker-compose up --build
 
 // Run for stop containers
