@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package apiService;
+
+message ClientProfileRequest {
+  int32 id = 1;
+}
+
+message ClientProfileResponse {
+  int32 id = 1;
+  string photos = 2;
+  string name = 3;
+  int32 age = 4;
+  string description = 5;
+  string height = 6;
+  string weight = 7;
+  string bodyType = 8;
+  string hairColor = 9;
+  string education = 10;
+  string work = 11;
+  string location = 12;
+  bool isOnline = 13;
+  bool isVerified = 14;
+}
+
+service ApiService {
+  rpc GetClientProfileById(ClientProfileRequest) returns (ClientProfileResponse);
+}

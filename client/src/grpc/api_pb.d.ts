@@ -22,11 +22,47 @@ export namespace ClientProfileRequest {
 }
 
 export class ClientProfileResponse extends jspb.Message {
+  getId(): number;
+  setId(value: number): ClientProfileResponse;
+
+  getPhotos(): string;
+  setPhotos(value: string): ClientProfileResponse;
+
   getName(): string;
   setName(value: string): ClientProfileResponse;
 
   getAge(): number;
   setAge(value: number): ClientProfileResponse;
+
+  getDescription(): string;
+  setDescription(value: string): ClientProfileResponse;
+
+  getHeight(): string;
+  setHeight(value: string): ClientProfileResponse;
+
+  getWeight(): string;
+  setWeight(value: string): ClientProfileResponse;
+
+  getBodytype(): string;
+  setBodytype(value: string): ClientProfileResponse;
+
+  getHaircolor(): string;
+  setHaircolor(value: string): ClientProfileResponse;
+
+  getEducation(): string;
+  setEducation(value: string): ClientProfileResponse;
+
+  getWork(): string;
+  setWork(value: string): ClientProfileResponse;
+
+  getLocation(): string;
+  setLocation(value: string): ClientProfileResponse;
+
+  getIsonline(): boolean;
+  setIsonline(value: boolean): ClientProfileResponse;
+
+  getIsverified(): boolean;
+  setIsverified(value: boolean): ClientProfileResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ClientProfileResponse.AsObject;
@@ -38,8 +74,20 @@ export class ClientProfileResponse extends jspb.Message {
 
 export namespace ClientProfileResponse {
   export type AsObject = {
+    id: number,
+    photos: string,
     name: string,
     age: number,
+    description: string,
+    height: string,
+    weight: string,
+    bodytype: string,
+    haircolor: string,
+    education: string,
+    work: string,
+    location: string,
+    isonline: boolean,
+    isverified: boolean,
   }
 }
 

@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for clientProfile
+ * @fileoverview gRPC-Web generated client stub for apiService
  * @enhanceable
  * @public
  */
@@ -13,10 +13,10 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as client_profile_pb from './client_profile_pb';
+import * as api_pb from './api_pb';
 
 
-export class ClientProfileServiceClient {
+export class ApiServiceClient {
   client_: grpcWeb.AbstractClientBase;
   hostname_: string;
   credentials_: null | { [index: string]: string; };
@@ -36,32 +36,32 @@ export class ClientProfileServiceClient {
   }
 
   methodInfoGetClientProfileById = new grpcWeb.AbstractClientBase.MethodInfo(
-    client_profile_pb.ClientProfileResponse,
-    (request: client_profile_pb.ClientProfileRequest) => {
+    api_pb.ClientProfileResponse,
+    (request: api_pb.ClientProfileRequest) => {
       return request.serializeBinary();
     },
-    client_profile_pb.ClientProfileResponse.deserializeBinary
+    api_pb.ClientProfileResponse.deserializeBinary
   );
 
   getClientProfileById(
-    request: client_profile_pb.ClientProfileRequest,
-    metadata: grpcWeb.Metadata | null): Promise<client_profile_pb.ClientProfileResponse>;
+    request: api_pb.ClientProfileRequest,
+    metadata: grpcWeb.Metadata | null): Promise<api_pb.ClientProfileResponse>;
 
   getClientProfileById(
-    request: client_profile_pb.ClientProfileRequest,
+    request: api_pb.ClientProfileRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: client_profile_pb.ClientProfileResponse) => void): grpcWeb.ClientReadableStream<client_profile_pb.ClientProfileResponse>;
+               response: api_pb.ClientProfileResponse) => void): grpcWeb.ClientReadableStream<api_pb.ClientProfileResponse>;
 
   getClientProfileById(
-    request: client_profile_pb.ClientProfileRequest,
+    request: api_pb.ClientProfileRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: client_profile_pb.ClientProfileResponse) => void) {
+               response: api_pb.ClientProfileResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/clientProfile.ClientProfileService/GetClientProfileById',
+          '/apiService.ApiService/GetClientProfileById',
         request,
         metadata || {},
         this.methodInfoGetClientProfileById,
@@ -69,7 +69,7 @@ export class ClientProfileServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/clientProfile.ClientProfileService/GetClientProfileById',
+      '/apiService.ApiService/GetClientProfileById',
     request,
     metadata || {},
     this.methodInfoGetClientProfileById);
