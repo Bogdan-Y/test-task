@@ -1,0 +1,9 @@
+{
+  "name": "test-task",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "npm run protos && npm run start-client",
+    "protos": "cd ./protos && npm run build-copy",
+    "start-client": "cd ./client && npm start"
+  }
+}

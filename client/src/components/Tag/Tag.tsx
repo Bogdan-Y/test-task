@@ -2,9 +2,9 @@ import React from 'react';
 import { TagContainer } from './styles';
 
 interface TagProps {
-  label: string,
-  icon?: string,
-  isActive?: boolean
+  label: string;
+  icon?: string;
+  isActive?: boolean;
 }
 
 const Tag: React.FC<TagProps> = (props) => {

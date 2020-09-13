@@ -31,7 +31,7 @@ const ClientProfile: React.FC = () => {
       {profileInfo && (
         <>
           <ClientProfileTop>
-            <SliderPhoto />
+            <SliderPhoto photos={profileInfo.photosList} />
           </ClientProfileTop>
           <ClientProfileContent>
             <ClientProfileTitle>

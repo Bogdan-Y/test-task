@@ -6,26 +6,28 @@ import {
   SliderPhotoIndicators,
 } from './styles';
 
-const SliderPhoto: React.FC = () => {
-  return (
-    <SliderPhotoContainer>
-      <div>
-        <SliderPhotoImg src="./assets/profile-slider-photo.png" alt="slider photo" />
-      </div>
+interface SliderPhotoProps {
+  photos: string[];
+}
 
-      <SliderPhotoFooter>
-        <SliderPhotoIndicators>
-          <li className="active" />
-          <li />
-          <li />
-          <li />
-          <li />
-          <li />
-          <li />
-        </SliderPhotoIndicators>
-      </SliderPhotoFooter>
-    </SliderPhotoContainer>
-  );
-};
+const SliderPhoto: React.FC<SliderPhotoProps> = ({ photos }) => (
+  <SliderPhotoContainer>
+    <div>
+      <SliderPhotoImg src={photos[0]} alt="slider photo" />
+    </div>
+
+    <SliderPhotoFooter>
+      <SliderPhotoIndicators>
+        <li className="active" />
+        <li />
+        <li />
+        <li />
+        <li />
+        <li />
+        <li />
+      </SliderPhotoIndicators>
+    </SliderPhotoFooter>
+  </SliderPhotoContainer>
+);
 
 export default SliderPhoto;

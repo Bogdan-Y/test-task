@@ -1,12 +1,12 @@
 import React, { ReactNode, useContext } from 'react';
 import { ApiServiceClient } from './proto/ApiServiceClientPb';
-import clientProfileApi from './services/api/client-profile-api';
+import { getClientProfileApi } from './services/api/client-profile-api';
 
 const HostName = 'http://localhost:9090';
-export const apiService = new ApiServiceClient(HostName, null, null);
+const apiService = new ApiServiceClient(HostName, null, null);
 
 const api = {
-  clientProfile: clientProfileApi,
+  clientProfile: getClientProfileApi(apiService),
 };
 
 type GrpcApi = typeof api;
@@ -18,10 +18,8 @@ interface ApiProviderProps {
   children: ReactNode;
 }
 
-export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => {
-  return (
-    <ApiContext.Provider value={api}>
-      {children}
-    </ApiContext.Provider>
-  );
-};
+export const ApiProvider: React.FC<ApiProviderProps> = ({ children }) => (
+  <ApiContext.Provider value={api}>
+    {children}
+  </ApiContext.Provider>
+);
