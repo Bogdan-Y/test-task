@@ -30,6 +30,8 @@ npm run install-dependency
 ```sh
 docker-compose pull
 docker-compose up --build
+
+// Run for stop containers
 docker-compose down
 ```
 
